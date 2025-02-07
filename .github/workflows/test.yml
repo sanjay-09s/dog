@@ -1,9 +1,16 @@
 name: test worflow
 "on":
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name'
+        required: true
+        default: 'GitHub'
 jobs:
   hi-github:
     runs-on: ubuntu-latest
+    env:
+      name: ${{ inputs.name }}
     steps:
       - name: Hi GitHub
-        run: echo "Hi GitHub"
+        run: echo "Hi $name"
