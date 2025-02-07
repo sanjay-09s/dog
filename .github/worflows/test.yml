@@ -1,0 +1,9 @@
+name: test worflow
+"on":
+  workflow_dispatch:
+jobs:
+  hi-github:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hi GitHub
+        run: echo "Hi GitHub"
